@@ -2,8 +2,12 @@
 # Weather Application
 
 Weather updates based on Latitude and Longitude.
- 
 
+### Tech Stack 
+Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
+ , MVVM with Repository Pattern 
+
+Permission Required : Location, Internet
 
 
 ## Screenshots
@@ -15,10 +19,7 @@ Weather updates based on Latitude and Longitude.
 
 
 
-### Tech Stack 
 
-Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
- , MVVM with Repository Pattern 
 
 
 ### Developed by 
