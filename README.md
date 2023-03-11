@@ -17,7 +17,7 @@ Weather updates based on Latitude and Longitude.
 
 ### Tech Stack 
 
-Kotlin, Flow , Coroutines, Recyclerview with Multi viewHolders
+Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
  , MVVM with Repository Pattern 
 
 
