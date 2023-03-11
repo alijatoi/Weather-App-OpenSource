@@ -8,7 +8,7 @@ Weather updates based on Latitude and Longitude.
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](screenshots/ss1.png)
 
 
 
