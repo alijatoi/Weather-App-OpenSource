@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Card View widget-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    card_view:cardCornerRadius="25dp"
+    card_view:cardElevation="5dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+
+      <ImageView
+          android:id="@+id/imageView2"
+          android:layout_width="170dp"
+          android:layout_height="190dp"
+          android:scaleType="fitXY"
+          android:src="@drawable/backgrund1"
+          card_view:layout_constraintBottom_toBottomOf="parent"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.0"
+          card_view:layout_constraintStart_toStartOf="parent"
+          card_view:layout_constraintTop_toTopOf="parent"
+          card_view:layout_constraintVertical_bias="0.0" />
+
+      <TextView
+          android:id="@+id/HourlytimeText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:fontFamily="sans-serif-medium"
+          android:text="Time"
+          android:textColor="#FFFFFF"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintStart_toStartOf="parent"
+          card_view:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+
+      <TextView
+          android:id="@+id/Hourlytemperature"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="112dp"
+          android:fontFamily="sans-serif-medium"
+          android:text="20"
+          android:textColor="#DDDDDD"
+          android:textSize="20sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.503"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/HourlyweatherDescription"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="28dp"
+          android:fontFamily="sans-serif-medium"
+          android:text="WeatherDecription"
+          android:textColor="#DDDDDD"
+          android:textSize="13sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.507"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <ImageView
+          android:id="@+id/HourlyweatherCode"
+          android:layout_width="57dp"
+          android:layout_height="54dp"
+          android:src="@drawable/ic_pressure"
+          card_view:layout_constraintBottom_toBottomOf="parent"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.504"
+          card_view:layout_constraintStart_toStartOf="@+id/imageView2"
+          card_view:layout_constraintTop_toTopOf="@+id/imageView2"
+          card_view:layout_constraintVertical_bias="0.661" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

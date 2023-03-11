@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--Card View widget-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    card_view:cardCornerRadius="25dp"
+    card_view:cardElevation="5dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content">
+
+
+      <ImageView
+          android:id="@+id/imageView2"
+          android:layout_width="180dp"
+          android:layout_height="200dp"
+          android:scaleType="fitXY"
+          android:src="@drawable/backgrund1"
+          card_view:layout_constraintBottom_toBottomOf="parent"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.0"
+          card_view:layout_constraintStart_toStartOf="parent"
+          card_view:layout_constraintTop_toTopOf="parent"
+          card_view:layout_constraintVertical_bias="0.0" />
+
+      <TextView
+          android:id="@+id/DailytimeText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12dp"
+          android:fontFamily="@font/acme"
+          android:text="Time"
+          android:textColor="#FFFFFF"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintStart_toStartOf="parent"
+          card_view:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+      <TextView
+          android:id="@+id/temperature1"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="144dp"
+          android:fontFamily="@font/acme"
+          android:text="Max.Temperature"
+          android:textColor="#DDDDDD"
+          android:textSize="12sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/DailymaxTemperature"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="112dp"
+          android:fontFamily="sans-serif-medium"
+          android:text="20"
+          android:textColor="#DDDDDD"
+          android:textSize="18sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.503"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/DailyminTemperature"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="60dp"
+          android:fontFamily="sans-serif-medium"
+          android:text="18"
+          android:textColor="#DDDDDD"
+          android:textSize="20sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.503"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <TextView
+          android:id="@+id/Dailytemperature2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="88dp"
+          android:fontFamily="@font/acme"
+          android:text="Min. Temprature"
+          android:textColor="#DDDDDD"
+          android:textSize="13sp"
+          card_view:layout_constraintBottom_toBottomOf="@+id/imageView2"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.494"
+          card_view:layout_constraintStart_toStartOf="parent" />
+
+      <ImageView
+          android:id="@+id/DailyweatherCode"
+          android:layout_width="45dp"
+          android:layout_height="35dp"
+          android:src="@drawable/ic_pressure"
+          card_view:layout_constraintBottom_toBottomOf="parent"
+          card_view:layout_constraintEnd_toEndOf="parent"
+          card_view:layout_constraintHorizontal_bias="0.503"
+          card_view:layout_constraintStart_toStartOf="@+id/imageView2"
+          card_view:layout_constraintTop_toTopOf="@+id/imageView2"
+          card_view:layout_constraintVertical_bias="0.903" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
