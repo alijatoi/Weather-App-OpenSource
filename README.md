@@ -9,19 +9,6 @@ Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
 
 Permission Required : Location, Internet
 
-
-## Screenshots
-
-![App Screenshot](screenshots/ss1.png) 
-![App Screenshot](screenshots/ss2.png)
-![App Screenshot](screenshots/ss3.png)
-![App Screenshot](screenshots/ss4.png)
-
-
-
-
-
-
 ### Developed by 
 
 
