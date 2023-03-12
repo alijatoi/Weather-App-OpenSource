@@ -18,9 +18,11 @@ import kotlinx.coroutines.launch
 
 class WeatherViewModel(application: Application):ViewModel() {
 
+
+    private var restaurantRepository = Repository(application.applicationContext)
+
     private val _loadingState = MutableLiveData<WeatherLoadingState>()
     val loadingState: LiveData<WeatherLoadingState> = _loadingState
-    private var restaurantRepository = Repository(application.applicationContext)
 
     val currentWeather: LiveData<CurrentWeatherEntity?>
         get() = restaurantRepository.currentWeather
@@ -39,8 +41,7 @@ class WeatherViewModel(application: Application):ViewModel() {
         }
 
             catch (e: Exception) {
-                Log.d("error","inside exception")
-
+                _loadingState.value = WeatherLoadingState.Error
             }
         }
     }
