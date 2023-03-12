@@ -1,7 +1,7 @@
 
 # Weather Application
 
-Weather updates based on Latitude and Longitude.
+Weather updates based on Current Location ( Latitude and Longitude).
 
 ### Tech Stack 
 Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
