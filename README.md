@@ -1,11 +1,11 @@
 
 # Weather Application
 
-Weather updates based on Current Location ( Latitude and Longitude).
+Weather updates based on Current Location of User
+
 
 ### Tech Stack 
-Kotlin, Flow , Coroutines, Jetpack Libraries Recyclerview with Multi viewHolders
- , MVVM with Repository Pattern 
+Kotlin, Flow , Coroutines, Jetpack Libraries (Room, ViewModel, Recyclerview with Multi viewHolders), MVVM with Repository Pattern 
 
 Permission Required : Location, Internet
 
