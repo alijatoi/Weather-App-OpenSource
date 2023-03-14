@@ -1,6 +1,5 @@
 package com.example.weatherappusingopenmeteo.data.local.database
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity

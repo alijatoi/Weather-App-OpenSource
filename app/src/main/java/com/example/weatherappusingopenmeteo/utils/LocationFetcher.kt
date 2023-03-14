@@ -10,10 +10,12 @@ import com.google.android.gms.location.*
 import com.google.android.gms.tasks.CancellationToken
 import com.google.android.gms.tasks.CancellationTokenSource
 import com.google.android.gms.tasks.OnTokenCanceledListener
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import java.util.*
+import javax.inject.Inject
 
-class LocationFetcher(private val context: Context) {
+class LocationFetcher @Inject constructor(@ApplicationContext private val context: Context) {
     private val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
 
     @SuppressLint("MissingPermission")

@@ -14,6 +14,7 @@ import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.ApiResponse
 import com.example.weatherappusingopenmeteo.data.remote.Remote
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 
@@ -22,12 +23,12 @@ class Repository(context: Context) {
     private val _error = MutableLiveData<String>()
 
 
-    val currentWeather: LiveData<CurrentWeatherEntity?>
-        get() = database.currentWeatherDAO().getCurrent().flowOn(Dispatchers.IO).asLiveData()
-    val hourlyWeather: LiveData<List<HourlyWeatherEntity?>>
-        get() = database.hourlyWeatherDAO().getHourly().flowOn(Dispatchers.IO).asLiveData()
-    val dailyWeather: LiveData<List<DailyWeatherEntity?>>
-        get() = database.dailyWeatherDAO().get().flowOn(Dispatchers.IO).asLiveData()
+    val currentWeather: Flow<CurrentWeatherEntity?>
+        get() = database.currentWeatherDAO().getCurrent().flowOn(Dispatchers.IO)
+    val hourlyWeather: Flow<List<HourlyWeatherEntity?>>
+        get() = database.hourlyWeatherDAO().getHourly().flowOn(Dispatchers.IO)
+    val dailyWeather: Flow<List<DailyWeatherEntity?>>
+        get() = database.dailyWeatherDAO().get().flowOn(Dispatchers.IO)
 
 
     suspend fun update(location: Location) {

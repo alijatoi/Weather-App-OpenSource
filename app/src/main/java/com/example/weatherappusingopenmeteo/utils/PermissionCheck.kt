@@ -9,8 +9,11 @@ import android.location.LocationManager
 import android.provider.Settings
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import dagger.hilt.android.qualifiers.ActivityContext
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class PermissionCheck(private val activity: Activity) {
+class PermissionCheck @Inject constructor(@ActivityContext private val  activity: Activity, @ApplicationContext private val context: Context) {
 
 
     val LOCATION_PERMISSION_REQUEST_CODE = 101
@@ -28,15 +31,17 @@ class PermissionCheck(private val activity: Activity) {
 
             } else {
                 ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+
             }
             return false
+
         }
         return true
     }
 
 
      fun showRationaleDialog() {
-        AlertDialog.Builder(activity)
+         AlertDialog.Builder(context)
             .setTitle("Location Permission")
             .setMessage("This app needs location permission to provide you with better service.")
             .setPositiveButton("Allow") { _, _ ->

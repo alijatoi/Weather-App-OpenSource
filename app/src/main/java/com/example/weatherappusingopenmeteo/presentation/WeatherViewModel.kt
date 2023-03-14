@@ -4,32 +4,33 @@ import android.app.Application
 import android.content.Context
 import android.location.Location
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.weatherappusingopenmeteo.domain.Repository
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.WeatherLoadingState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WeatherViewModel(application: Application):ViewModel() {
+@HiltViewModel
+class WeatherViewModel @Inject constructor(@ApplicationContext application : Context):ViewModel() {
 
 
-    private var restaurantRepository = Repository(application.applicationContext)
+    private var restaurantRepository = Repository(application)
 
     private val _loadingState = MutableLiveData<WeatherLoadingState>()
     val loadingState: LiveData<WeatherLoadingState> = _loadingState
 
     val currentWeather: LiveData<CurrentWeatherEntity?>
-        get() = restaurantRepository.currentWeather
+        get() = restaurantRepository.currentWeather.asLiveData()
     val hourlyWeather: LiveData<List<HourlyWeatherEntity?>>
-        get() = restaurantRepository.hourlyWeather
+        get() = restaurantRepository.hourlyWeather.asLiveData()
     val dailyWeather: LiveData<List<DailyWeatherEntity?>>
-        get() = restaurantRepository.dailyWeather
+        get() = restaurantRepository.dailyWeather.asLiveData()
 
 
     fun updateWeather(location: Location) {
