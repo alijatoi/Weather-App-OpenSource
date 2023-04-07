@@ -2,6 +2,7 @@ package com.example.weatherappusingopenmeteo.domain
 
 import android.content.Context
 import android.location.Location
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
@@ -32,8 +33,11 @@ class Repository(context: Context) {
 
 
     suspend fun update(location: Location) {
+//        val result = Remote().getCityUpdate("Hamburg")
+//        Log.d("Chaa",result.toString())
 
         when (val result = Remote().getLatestUpdate(location)) {
+
 
             is ApiResponse.Success -> {
                 val weather = result.data
@@ -47,6 +51,10 @@ class Repository(context: Context) {
                 _error.postValue(exception.toString())
             }
         }
+    }
+
+
+    suspend fun getCityData(cityName:String){
     }
 
     private suspend fun insertData(current: CurrentWeatherEntity, hourly: List<HourlyWeatherEntity>,

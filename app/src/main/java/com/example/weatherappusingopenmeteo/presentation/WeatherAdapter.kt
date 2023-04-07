@@ -10,8 +10,9 @@ import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.presentation.WeatherType
 import com.example.weatherappusingopenmeteo.presentation.DailyViewHolder
 import com.example.weatherappusingopenmeteo.presentation.HourlyViewHolder
+import javax.inject.Inject
 
-class  WeatherAdapter() : RecyclerView.Adapter<ViewHolder>() {
+class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>() {
 
     companion object {
         private const val VIEW_TYPE_1 = 1
