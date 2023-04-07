@@ -6,7 +6,7 @@ Weather updates based on Current Location of User
 ## Work-Flow
 
 ### Tech Stack 
-Kotlin, Flow , Coroutines, Jetpack Libraries (Room, ViewModel, Recyclerview with Multi viewHolders), Hilt for Dependency Injection MVVM with Repository Pattern 
+Kotlin, Flow , Coroutines, Jetpack Libraries (Room, ViewModel, Recyclerview with Multi viewHolders, Hilt for Dependency Injection), MVVM with Repository Pattern 
 
 Permission Required : Location, Internet
 
