@@ -15,7 +15,7 @@ object ApiUtilities {
 
     fun getCityInstance() : Retrofit{
 
-    val apiKey = ""
+    val apiKey = "Your Api Key"
     return Retrofit.Builder()
         .baseUrl("https://api.api-ninjas.com")
         .addConverterFactory(GsonConverterFactory.create())
