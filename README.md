@@ -1,7 +1,8 @@
 
 # Weather Application
 
-Weather updates based on Current Location of User
+Dashboard : Shows Current Weather, and Weekly Forecast
+updates based on Current Location of User. User Can Search Weather of Any City in the world.
 
 
 
