@@ -16,6 +16,7 @@ import androidx.navigation.NavDeepLinkBuilder
 import com.example.weatherappusingopenmeteo.R
 
 class Notification (private  val context : Context) {
+    //Channel ID to Differentiate between different channels category 
     val CHANNEL_ID = "channel_Id"
     val notificationId = System.currentTimeMillis().toInt()
 
