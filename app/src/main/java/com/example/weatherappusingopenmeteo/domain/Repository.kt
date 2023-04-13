@@ -2,13 +2,9 @@ package com.example.weatherappusingopenmeteo.domain
 
 import android.content.Context
 import android.location.Location
-import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.asLiveData
 import com.example.weatherappusingopenmeteo.data.Logic
 import com.example.weatherappusingopenmeteo.data.local.database.AppDatabase
-import com.example.weatherappusingopenmeteo.data.local.database.currentWeatherDAO
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
@@ -32,7 +28,7 @@ class Repository(context: Context) {
         get() = database.dailyWeatherDAO().get().flowOn(Dispatchers.IO)
 
 
-    suspend fun update(location: Location) {
+    suspend fun updateWeather(location: Location) {
 //        val result = Remote().getCityUpdate("Hamburg")
 //        Log.d("Chaa",result.toString())
 

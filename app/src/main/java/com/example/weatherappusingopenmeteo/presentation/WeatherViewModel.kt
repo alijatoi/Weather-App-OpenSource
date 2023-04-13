@@ -1,9 +1,7 @@
 package com.example.weatherappusingopenmeteo.presentation
 
-import android.app.Application
 import android.content.Context
 import android.location.Location
-import android.util.Log
 import androidx.lifecycle.*
 import com.example.weatherappusingopenmeteo.domain.Repository
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
@@ -37,7 +35,7 @@ class WeatherViewModel @Inject constructor(@ApplicationContext application : Con
         try {
             viewModelScope.launch(Dispatchers.IO)
                 {
-                restaurantRepository.update(location)
+                restaurantRepository.updateWeather(location)
                 }
         }
 
