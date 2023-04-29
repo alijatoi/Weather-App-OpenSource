@@ -1,8 +1,11 @@
 
 # Weather Application
 
+TODO Description
+
+Features : 
 Dashboard : Shows Current Weather, and Weekly Forecast
-updates based on Current Location of User. User Can Search Weather of Any City in the world.
+Updates based on Current Location of User. User Can Search Weather of Any City in the world.
 
 
 
@@ -14,7 +17,10 @@ Permission Required : Location, Internet
 ### Developed by 
 
 
-Api Used : https://open-meteo.com/
+Api Used : https://open-meteo.com/ and Google Places for Searching Cities and Places (Locations)
+#### For Google Places API : Update your google place API Key
+
+
 
 - [@AliJatoi](https://www.github.com/alijatoi)
 
