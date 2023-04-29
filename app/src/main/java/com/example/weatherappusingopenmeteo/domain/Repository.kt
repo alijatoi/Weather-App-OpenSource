@@ -2,23 +2,41 @@ package com.example.weatherappusingopenmeteo.domain
 
 import android.content.Context
 import android.location.Location
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
 import com.example.weatherappusingopenmeteo.data.Logic
 import com.example.weatherappusingopenmeteo.data.local.database.AppDatabase
+import com.example.weatherappusingopenmeteo.data.local.database.CurrentCity
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.ApiResponse
 import com.example.weatherappusingopenmeteo.data.remote.Remote
+import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Repository(context: Context) {
-    private val database = AppDatabase.getDatabase(context)
+@Singleton
+class Repository @Inject constructor(@ApplicationContext application : Context, private val remote: Remote) {
+
+    //DataStore Database for CITY NAME
+    private val currentCity: CurrentCity by lazy {
+        CurrentCity(application)
+    }
+
+    private val database = AppDatabase.getDatabase(application)
     private val _error = MutableLiveData<String>()
 
+        val cityName: Flow<String>
+        get() = currentCity.getData.flowOn(Dispatchers.IO)
 
     val currentWeather: Flow<CurrentWeatherEntity?>
         get() = database.currentWeatherDAO().getCurrent().flowOn(Dispatchers.IO)
@@ -26,14 +44,11 @@ class Repository(context: Context) {
         get() = database.hourlyWeatherDAO().getHourly().flowOn(Dispatchers.IO)
     val dailyWeather: Flow<List<DailyWeatherEntity?>>
         get() = database.dailyWeatherDAO().get().flowOn(Dispatchers.IO)
+    val cityWeather = MutableLiveData<CurrentWeatherEntity>()
 
 
-    suspend fun updateWeather(location: Location) {
-//        val result = Remote().getCityUpdate("Hamburg")
-//        Log.d("Chaa",result.toString())
-
-        when (val result = Remote().getLatestUpdate(location)) {
-
+    suspend fun updateWeather(latitude: Double, longitude : Double) {
+        when (val result = remote.getLatestUpdate(latitude,longitude)) {
 
             is ApiResponse.Success -> {
                 val weather = result.data
@@ -49,9 +64,21 @@ class Repository(context: Context) {
         }
     }
 
+    suspend fun getCityData(latitude: Double, longitude : Double){
+        when (val result = remote.getLatestUpdate(latitude,longitude)) {
+            is ApiResponse.Success -> {
+                val weather = result.data
+                val current = Logic().currentDataFilter(weather.currentWeather)
+                cityWeather.postValue(current)
+            }
+            is ApiResponse.Error -> {
+                val exception = result.exception
+                _error.postValue(exception.toString())
+            }
+            }
+        }
 
-    suspend fun getCityData(cityName:String){
-    }
+
 
     private suspend fun insertData(current: CurrentWeatherEntity, hourly: List<HourlyWeatherEntity>,
                                    daily: List<DailyWeatherEntity>) {
@@ -65,4 +92,8 @@ class Repository(context: Context) {
             database.dailyWeatherDAO().insert(daily)
         }
     }
+
+    suspend fun saveCity(cityName: String) {
+            currentCity.saveData(cityName)
+        }
 }

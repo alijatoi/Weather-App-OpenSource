@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.location.Geocoder
 import android.location.Location
-import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.location.*
 import com.google.android.gms.tasks.CancellationToken

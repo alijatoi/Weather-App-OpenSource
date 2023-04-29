@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.presentation
+package com.example.weatherappusingopenmeteo.utils
 
 import androidx.annotation.DrawableRes
 import com.example.weatherappusingopenmeteo.R

@@ -13,7 +13,8 @@ import dagger.hilt.android.qualifiers.ActivityContext
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class PermissionCheck @Inject constructor(@ActivityContext private val  activity: Activity, @ApplicationContext private val context: Context) {
+class PermissionCheck @Inject constructor(@ActivityContext private val  activity: Activity,
+                                          @ApplicationContext private val context: Context) {
 
 
     val LOCATION_PERMISSION_REQUEST_CODE = 101
@@ -25,12 +26,15 @@ class PermissionCheck @Inject constructor(@ActivityContext private val  activity
             return false
         }
 
-        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_FINE_LOCATION)
+            != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.ACCESS_FINE_LOCATION)) {
-                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    LOCATION_PERMISSION_REQUEST_CODE)
 
             } else {
-                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    LOCATION_PERMISSION_REQUEST_CODE)
 
             }
             return false
@@ -45,7 +49,8 @@ class PermissionCheck @Inject constructor(@ActivityContext private val  activity
             .setTitle("Location Permission")
             .setMessage("This app needs location permission to provide you with better service.")
             .setPositiveButton("Allow") { _, _ ->
-                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST_CODE)
+                ActivityCompat.requestPermissions(activity, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                    LOCATION_PERMISSION_REQUEST_CODE)
             }
             .setNegativeButton("Deny") { _, _ -> }
             .create()

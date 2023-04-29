@@ -4,13 +4,14 @@ import android.location.Location
 import android.util.Log
 import com.example.weatherappusingopenmeteo.utils.CONSTANTS
 import okio.IOException
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class Remote   {
-    suspend fun getLatestUpdate(location: Location): ApiResponse<WeatherData> {
+@Singleton
+class Remote @Inject constructor(private val apiInterface: ApiInterface)  {
+    suspend fun getLatestUpdate(latitude: Double, longitude : Double): ApiResponse<WeatherData> {
             return try {
-                val apiInterface = ApiUtilities.getUpdateInstance().create(ApiInterface::class.java)
-
-                val response = apiInterface.getWeather(location.latitude.toString(), location.longitude.toString(),
+                val response = apiInterface.getWeather(latitude.toString(), longitude.toString(),
                     CONSTANTS.hourly,
                     CONSTANTS.daily,
                     CONSTANTS.currentWeather.toString(),
@@ -27,12 +28,4 @@ class Remote   {
                 ApiResponse.Error(e)
             }
         }
-
-     suspend fun getCityUpdate(cityName : String){
-        val apiInterface = ApiUtilities.getCityInstance().create(ApiInterface::class.java)
-        val response = apiInterface.getCityData(cityName)
-        if (response.isSuccessful) {
-            Log.d("Response",response.body().toString())
-        }
-    }
-    }
+}

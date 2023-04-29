@@ -24,10 +24,5 @@ object AppModule {
     fun provideContext(application: Application): Context {
         return application.applicationContext
     }
-//
-//    @Provides
-//    fun provideLocationFetcher(context: Context): LocationFetcher {
-//        return LocationFetcher(context)
-//    }
 
 }

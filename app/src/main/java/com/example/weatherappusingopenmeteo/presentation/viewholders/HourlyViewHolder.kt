@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.presentation
+package com.example.weatherappusingopenmeteo.presentation.viewholders
 
 import android.view.View
 import android.widget.ImageView
@@ -6,12 +6,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherappusingopenmeteo.R
 import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.utils.WeatherType
 
 class HourlyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    val hourlyTime : TextView = itemView.findViewById(R.id.HourlytimeText)
-    val hourlyTemperature : TextView = itemView.findViewById(R.id.Hourlytemperature)
-    val hourlyWeatherCode : ImageView = itemView.findViewById(R.id.HourlyweatherCode)
-    val hourlyWeatherDescription: TextView = itemView.findViewById(R.id.HourlyweatherDescription)
+    private val hourlyTime : TextView = itemView.findViewById(R.id.HourlytimeText)
+    private val hourlyTemperature = itemView.findViewById<TextView>(R.id.Hourlytemperature)
+    private val hourlyWeatherCode : ImageView = itemView.findViewById(R.id.HourlyweatherCode)
+    private val hourlyWeatherDescription: TextView = itemView.findViewById(R.id.HourlyweatherDescription)
 
     fun bind(hourlyWeather: HourlyWeatherEntity?) {
         hourlyTime.text = hourlyWeather?.time ?: ""

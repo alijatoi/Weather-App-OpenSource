@@ -7,9 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
-import com.example.weatherappusingopenmeteo.presentation.WeatherType
-import com.example.weatherappusingopenmeteo.presentation.DailyViewHolder
-import com.example.weatherappusingopenmeteo.presentation.HourlyViewHolder
+import com.example.weatherappusingopenmeteo.presentation.viewholders.DailyViewHolder
+import com.example.weatherappusingopenmeteo.presentation.viewholders.HourlyViewHolder
 import javax.inject.Inject
 
 class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>() {
@@ -18,8 +17,6 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
         private const val VIEW_TYPE_1 = 1
         private const val VIEW_TYPE_2 = 2
     }
-
-
 
     private val hourlyWeather = mutableListOf<HourlyWeatherEntity?>()
     private val dailyWeather = mutableListOf<DailyWeatherEntity?>()
@@ -30,8 +27,6 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
         hourlyWeather.addAll(data)
         diffResult.dispatchUpdatesTo(this)
     }
-
-
     fun setDaily(data: List<DailyWeatherEntity?>) {
         val diffResult = DiffUtil.calculateDiff(
             DailyDiffCallback(dailyWeather, data)
@@ -40,8 +35,6 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
         dailyWeather.addAll(data)
         diffResult.dispatchUpdatesTo(this)
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
 
         return when(viewType) {
@@ -58,8 +51,6 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
         else -> throw IllegalArgumentException("Invalid view type")
     }
     }
-
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if(hourlyWeather.isNotEmpty()) {
 
@@ -86,17 +77,6 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
         if (position < 4) VIEW_TYPE_1 else VIEW_TYPE_2
 }
 
-
-
-
-
-
-
-
-
-
-
-
 class HourlyDiffCallback(
     private val oldList: MutableList<HourlyWeatherEntity?>,
     private val newList: List<HourlyWeatherEntity?>
@@ -108,7 +88,6 @@ class HourlyDiffCallback(
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int) =
         oldList[oldItemPosition] == newList[newItemPosition]
 }
-
 class DailyDiffCallback(
     private val oldList: MutableList<DailyWeatherEntity?>,
     private val newList: List<DailyWeatherEntity?>

@@ -1,32 +1,32 @@
 //package com.example.weatherappusingopenmeteo.extras
 //
-//package com.example.weatherappusingopenmeteo.utils
-//
 //import android.Manifest
 //import android.app.Activity
 //import android.app.NotificationChannel
 //import android.app.NotificationManager
-//import android.content.BroadcastReceiver
 //import android.content.Context
-//import android.content.Intent
 //import android.content.pm.PackageManager
 //import android.os.Build
-//import android.util.Log
 //import androidx.core.app.ActivityCompat
 //import androidx.core.app.NotificationCompat
 //import androidx.core.app.NotificationManagerCompat
 //import androidx.navigation.NavDeepLinkBuilder
+//import androidx.work.Worker
+//import androidx.work.WorkerParameters
 //import com.example.weatherappusingopenmeteo.R
 //
-//class Notification () : BroadcastReceiver() {
-//    private val channelID = "channel_Id"
-//    private val notificationId = System.currentTimeMillis().toInt() //this will create new notification ID based on current Time.
-//    override fun onReceive(context: Context, intent: Intent) {
-//        val requestCode = 1001
-//        Log.d("Check","Checkk")
+//class MyWorker(private val context: Context, private val params: WorkerParameters) : Worker(context,params) {
 //
-//        // NavDeepLinkBuilder use to show specific fragment when the user touch/tap the notification
-//        // In this case, About Fragment will be shown
+//    override fun doWork(): Result {
+//        displayNotification()
+//        return Result.Success()
+//
+//    }
+//
+//    fun displayNotification(){
+//         val channelID = "channel_Id"
+//         val requestCode = 1001
+//        val notificationId = System.currentTimeMillis().toInt()
 //        val pendingIntent = NavDeepLinkBuilder(context)
 //            .setGraph(R.navigation.nav_graph) // Set the navigation graph that contains the fragment
 //            .setDestination(R.id.aboutFragment) // Set the destination fragment to launch
@@ -40,7 +40,6 @@
 //            .setContentIntent(pendingIntent)
 //            .setAutoCancel(true)
 //            .addAction(R.drawable.ic_drop,"Action",pendingIntent)
-//            .setTimeoutAfter(15000)
 //
 //        val bigTextStyle = NotificationCompat.BigTextStyle()
 //            .bigText("This is a long text which will be shown when the notification is expanded.")
@@ -72,16 +71,15 @@
 //            if (ActivityCompat.checkSelfPermission( context, Manifest.permission.POST_NOTIFICATIONS)
 //                != PackageManager.PERMISSION_GRANTED
 //            ) {
-//                ActivityCompat.requestPermissions(context as Activity,
-//                    arrayOf(Manifest.permission.POST_NOTIFICATIONS),
-//                    requestCode )
+//                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//                    ActivityCompat.requestPermissions(context as Activity,
+//                        arrayOf(Manifest.permission.POST_NOTIFICATIONS),
+//                        requestCode )
+//                }
 //            }
 //            else {
 //                notify(notificationId, builder.build())
 //            }
 //        }
 //    }
-//
 //}
-//
-//

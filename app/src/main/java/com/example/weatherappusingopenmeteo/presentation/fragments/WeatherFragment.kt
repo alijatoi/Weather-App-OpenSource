@@ -1,13 +1,7 @@
 package com.example.weatherappusingopenmeteo.presentation.fragments
 
-import android.app.AlarmManager
-import android.app.PendingIntent
-import android.content.Context.ALARM_SERVICE
-import android.content.Intent
-import android.os.Build
+
 import android.os.Bundle
-import android.os.SystemClock
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,11 +12,10 @@ import com.example.weatherappusingopenmeteo.WeatherAdapter
 import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.WeatherLoadingState
 import com.example.weatherappusingopenmeteo.databinding.FragmentWeatherBinding
-import com.example.weatherappusingopenmeteo.presentation.WeatherType
+import com.example.weatherappusingopenmeteo.utils.WeatherType
 import com.example.weatherappusingopenmeteo.presentation.WeatherViewModel
 import com.example.weatherappusingopenmeteo.utils.LocationFetcher
 import com.example.weatherappusingopenmeteo.utils.NetworkUtils
-import com.example.weatherappusingopenmeteo.utils.Notification
 import com.example.weatherappusingopenmeteo.utils.PermissionCheck
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -30,6 +23,8 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class WeatherFragment : Fragment() {
+
+
     private lateinit var viewBinding : FragmentWeatherBinding
 
     @Inject
@@ -43,8 +38,6 @@ class WeatherFragment : Fragment() {
 
     lateinit var weatherViewModel : WeatherViewModel
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         weatherViewModel = ViewModelProvider(this).get(WeatherViewModel::class.java)
@@ -55,10 +48,8 @@ class WeatherFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
         // Inflate the layout for this fragment
         viewBinding = FragmentWeatherBinding.inflate(inflater, container, false)
-
 
         viewBinding.recyclerviewHorizontal.adapter = adapter
 
@@ -71,15 +62,21 @@ class WeatherFragment : Fragment() {
         weatherViewModel.hourlyWeather.observe(viewLifecycleOwner) {
             adapter.setHourly(it)
         }
+
         weatherViewModel.dailyWeather.observe(viewLifecycleOwner) {
             viewBinding.animationView.visibility = View.GONE
             adapter.setDaily(it)
+        }
+
+        weatherViewModel.cityName.observe(viewLifecycleOwner){
+            viewBinding.cityName.text = it.toString()
         }
 
 
         viewBinding.button.setOnClickListener {
             updateData()
         }
+
 
         weatherViewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
             when (loadingState) {
@@ -89,7 +86,6 @@ class WeatherFragment : Fragment() {
             }
         }
         return viewBinding.root
-
     }
 
 
@@ -100,8 +96,8 @@ class WeatherFragment : Fragment() {
                 locationFetcher.getCurrentLocation { location ->
                     if (location != null) {
                         val cityName = locationFetcher.getCityNameFromLocation(location)
-                        viewBinding.cityName.text = cityName
-                        weatherViewModel.updateWeather(location)
+                        weatherViewModel.saveCity(cityName)
+                        weatherViewModel.getCurrentWeather(location.latitude,location.longitude)
                     }
                 }
             }

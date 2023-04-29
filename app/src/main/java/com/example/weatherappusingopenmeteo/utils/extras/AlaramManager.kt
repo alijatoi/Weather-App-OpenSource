@@ -7,7 +7,7 @@
 //import android.os.Build
 //import android.os.SystemClock
 //import androidx.core.content.ContentProviderCompat.requireContext
-//import com.example.weatherappusingopenmeteo.utils.Notification
+//import Notification
 //
 //val alarmManager = requireContext().getSystemService(Context.ALARM_SERVICE) as AlarmManager
 //val intent = Intent(requireContext(), Notification::class.java)
