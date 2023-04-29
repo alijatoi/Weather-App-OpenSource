@@ -5,7 +5,7 @@ TODO Description
 
 Features : 
 Dashboard : Shows Current Weather, and Weekly Forecast
-Updates based on Current Location of User. User Can Search Weather of Any City in the world.
+Updates based on Current Location of User.   User Can Search Weather of Any City in the world.
 
 
 
