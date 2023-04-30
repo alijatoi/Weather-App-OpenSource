@@ -1,5 +1,5 @@
 
-# Weather Application
+# Weather App using Kotlin
 
 TODO Description
 
