@@ -17,7 +17,7 @@ Permission Required : Location, Internet
 ### Developed by 
 
 
-Api Used : https://open-meteo.com/ and Google Places for Searching Cities and Places (Locations)
+Api Used : https://open-meteo.com/ and Google Places for Searching Cities and Places (Locations), also street address can be searched as well.
 #### For Google Places API : Update your google place API Key
 
 
