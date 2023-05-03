@@ -1,7 +1,10 @@
 
 # Weather App using Kotlin
 
-To Do Description
+To Do :
+Adding Paging for better retrieving of results from the server
+
+### Description
 
 Features : 
 Dashboard : Shows Current Weather, and Weekly Forecast
