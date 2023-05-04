@@ -1,10 +1,10 @@
-package com.example.weatherappusingopenmeteo.di
+package com.example.weatherappusingopenmeteo.presentation.di
 
 import android.app.Activity
 import android.app.Application
 import android.content.Context
-import com.example.weatherappusingopenmeteo.utils.LocationFetcher
-import com.example.weatherappusingopenmeteo.utils.PermissionCheck
+import com.example.weatherappusingopenmeteo.domain.utils.LocationFetcher
+import com.example.weatherappusingopenmeteo.domain.utils.PermissionCheck
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.utils
+package com.example.weatherappusingopenmeteo.domain.utils
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.utils
+package com.example.weatherappusingopenmeteo.domain.utils
 
 object CONSTANTS {
      const val hourly = "temperature_2m,rain,snowfall,weathercode"

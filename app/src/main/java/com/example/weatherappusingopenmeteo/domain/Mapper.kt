@@ -1,16 +1,18 @@
-package com.example.weatherappusingopenmeteo.data
+package com.example.weatherappusingopenmeteo.domain
 
 import android.annotation.SuppressLint
 import android.os.Build
 import android.util.Log
 import androidx.annotation.RequiresApi
-import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.CurrentWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.WeatherData
 import org.threeten.bp.LocalTime;
 import org.threeten.bp.format.DateTimeFormatter;
-class Logic {
+import javax.inject.Inject
+
+class Mapper @Inject constructor() {
 
     @SuppressLint("NewApi")
     fun currentDataFilter(currentWeather: WeatherData.CurrentWeather): CurrentWeatherEntity {

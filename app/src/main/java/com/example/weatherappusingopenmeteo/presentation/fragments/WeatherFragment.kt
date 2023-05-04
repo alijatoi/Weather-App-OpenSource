@@ -9,14 +9,14 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.weatherappusingopenmeteo.WeatherAdapter
-import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.WeatherLoadingState
 import com.example.weatherappusingopenmeteo.databinding.FragmentWeatherBinding
-import com.example.weatherappusingopenmeteo.utils.WeatherType
+import com.example.weatherappusingopenmeteo.domain.utils.WeatherType
 import com.example.weatherappusingopenmeteo.presentation.WeatherViewModel
-import com.example.weatherappusingopenmeteo.utils.LocationFetcher
-import com.example.weatherappusingopenmeteo.utils.NetworkUtils
-import com.example.weatherappusingopenmeteo.utils.PermissionCheck
+import com.example.weatherappusingopenmeteo.domain.utils.LocationFetcher
+import com.example.weatherappusingopenmeteo.domain.utils.NetworkUtils
+import com.example.weatherappusingopenmeteo.domain.utils.PermissionCheck
 import dagger.hilt.android.AndroidEntryPoint
 
 import javax.inject.Inject

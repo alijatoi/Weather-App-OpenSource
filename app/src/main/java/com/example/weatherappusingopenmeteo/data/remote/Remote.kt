@@ -1,8 +1,10 @@
 package com.example.weatherappusingopenmeteo.data.remote
 
-import android.location.Location
-import android.util.Log
-import com.example.weatherappusingopenmeteo.utils.CONSTANTS
+
+import com.example.weatherappusingopenmeteo.data.remote.ApiInterface
+import com.example.weatherappusingopenmeteo.data.remote.ApiResponse
+import com.example.weatherappusingopenmeteo.data.remote.WeatherData
+import com.example.weatherappusingopenmeteo.domain.utils.CONSTANTS
 import okio.IOException
 import javax.inject.Inject
 import javax.inject.Singleton

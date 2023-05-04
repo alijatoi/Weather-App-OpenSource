@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.di
+package com.example.weatherappusingopenmeteo.presentation.di
 
 import com.example.weatherappusingopenmeteo.data.remote.ApiInterface
 import dagger.Module

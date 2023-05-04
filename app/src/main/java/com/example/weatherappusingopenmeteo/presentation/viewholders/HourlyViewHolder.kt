@@ -5,8 +5,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherappusingopenmeteo.R
-import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
-import com.example.weatherappusingopenmeteo.utils.WeatherType
+import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.utils.WeatherType
 
 class HourlyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val hourlyTime : TextView = itemView.findViewById(R.id.HourlytimeText)

@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.presentation.viewholders.DailyViewHolder
 import com.example.weatherappusingopenmeteo.presentation.viewholders.HourlyViewHolder
 import javax.inject.Inject

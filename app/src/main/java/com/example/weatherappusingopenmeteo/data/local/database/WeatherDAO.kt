@@ -1,9 +1,9 @@
 package com.example.weatherappusingopenmeteo.data.local.database
 
 import androidx.room.*
-import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.CurrentWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
 import kotlinx.coroutines.flow.Flow
 
 

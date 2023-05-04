@@ -3,26 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/bottom_nav_item"
     tools:context=".presentation.fragments.AboutFragment">
 
-    <SearchView
-        android:id="@+id/idSV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:iconifiedByDefault="false"
-        android:padding="4dp"
-        android:queryHint="Search Programming language" />
 
-    <!--List View from which data is to be searched
-         for different programming languages-->
-    <ListView
-        android:id="@+id/idLVProgrammingLanguages"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/idSV" />
-        <!-- Search suggestions/results go here (ScrollView, RecyclerView, etc.). -->
+
 
 </FrameLayout>

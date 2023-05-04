@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.data.local.model
+package com.example.weatherappusingopenmeteo.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

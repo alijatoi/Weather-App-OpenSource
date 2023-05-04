@@ -1,21 +1,19 @@
 package com.example.weatherappusingopenmeteo.presentation
 
-import android.content.Context
 import androidx.lifecycle.*
-import com.example.weatherappusingopenmeteo.domain.Repository
-import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
-import com.example.weatherappusingopenmeteo.data.local.model.HourlyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.CurrentWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.data.remote.WeatherLoadingState
+import com.example.weatherappusingopenmeteo.domain.Repository
 import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class WeatherViewModel @Inject constructor(@ApplicationContext application : Context, private val weatherRepository : Repository):ViewModel() {
+class WeatherViewModel @Inject constructor(private val weatherRepository : Repository):ViewModel() {
 
 
     private val _loadingState = MutableLiveData<WeatherLoadingState>()

@@ -5,8 +5,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherappusingopenmeteo.R
-import com.example.weatherappusingopenmeteo.data.local.model.DailyWeatherEntity
-import com.example.weatherappusingopenmeteo.utils.WeatherType
+import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.utils.WeatherType
 
 class DailyViewHolder (itemView: View) : RecyclerView.ViewHolder(itemView) {
     private val datetime : TextView = itemView.findViewById(R.id.DailytimeText)

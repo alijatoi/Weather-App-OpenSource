@@ -11,17 +11,16 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.weatherappusingopenmeteo.R
-import com.example.weatherappusingopenmeteo.data.local.model.CurrentWeatherEntity
+import com.example.weatherappusingopenmeteo.domain.model.CurrentWeatherEntity
 import com.example.weatherappusingopenmeteo.databinding.FragmentSearchBinding
 import com.example.weatherappusingopenmeteo.presentation.WeatherViewModel
-import com.example.weatherappusingopenmeteo.utils.NetworkUtils
-import com.example.weatherappusingopenmeteo.utils.PermissionCheck
+import com.example.weatherappusingopenmeteo.domain.utils.NetworkUtils
+import com.example.weatherappusingopenmeteo.domain.utils.PermissionCheck
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.widget.Autocomplete
 import com.google.android.libraries.places.widget.AutocompleteActivity
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment
-import com.google.android.libraries.places.widget.listener.PlaceSelectionListener
 import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -128,6 +127,7 @@ class SearchFragment : Fragment() {
                 AutocompleteActivity.RESULT_ERROR -> {
                     data?.let {
                         val status = Autocomplete.getStatusFromIntent(data)
+                        Log.d("status", status.toString())
                         showPopup("Error", "Error  searching for city !")
                     }
                 }

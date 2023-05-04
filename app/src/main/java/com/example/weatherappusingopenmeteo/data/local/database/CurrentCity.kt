@@ -9,6 +9,7 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+//Data Store for storing city name
 class CurrentCity (private val context : Context) {
 
     companion object {

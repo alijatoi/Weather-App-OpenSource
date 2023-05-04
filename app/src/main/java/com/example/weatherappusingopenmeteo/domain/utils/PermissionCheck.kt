@@ -1,4 +1,4 @@
-package com.example.weatherappusingopenmeteo.utils
+package com.example.weatherappusingopenmeteo.domain.utils
 import android.Manifest
 import android.app.Activity
 import android.app.AlertDialog

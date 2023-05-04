@@ -151,18 +151,21 @@
     </androidx.cardview.widget.CardView>
 
 
-
-
     <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/searcButton"
-            android:textSize="30sp"
-            android:text="haaa"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/acme"
+            android:text="Search for City"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/main_Cardview"
+            app:layout_constraintVertical_bias="0.824" />
+
+
 
     <androidx.fragment.app.FragmentContainerView
             android:id="@+id/autocomplete_fragment"
@@ -174,7 +177,6 @@
             android:background="@color/black"
             android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment"
             />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
