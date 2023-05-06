@@ -2,7 +2,7 @@
 ## Weather App using Kotlin
 
 #### To Do :
-Adding Paging for better retrieving of results from the server
+Adding Paging for optimized retrieving of results from the server
 
 ### Description
 
