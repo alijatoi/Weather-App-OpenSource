@@ -15,7 +15,7 @@ import javax.inject.Inject
 @HiltViewModel
 class WeatherViewModel @Inject constructor(private val weatherRepository : Repository):ViewModel() {
 
-
+dfksdkfjdskfjdskfjfkdsfjdsk
     private val _loadingState = MutableLiveData<WeatherLoadingState>()
     val loadingState: LiveData<WeatherLoadingState> = _loadingState
 
