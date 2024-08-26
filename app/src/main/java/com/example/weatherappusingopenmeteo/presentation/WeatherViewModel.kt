@@ -27,6 +27,7 @@ dfksdkfjdskfjdskfjfkdsfjdsk
         get() = weatherRepository.dailyWeather.asLiveData()
     val cityWeather : LiveData<CurrentWeatherEntity>
     get() = weatherRepository.cityWeather
+    نرنرکنارکنارکنار
 
     val cityName: LiveData<String>
         get() = weatherRepository.cityName.asLiveData()
