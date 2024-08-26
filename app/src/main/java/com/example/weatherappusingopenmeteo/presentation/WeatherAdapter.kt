@@ -22,7 +22,10 @@ class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>()
     private val dailyWeather = mutableListOf<DailyWeatherEntity?>()
 
     fun setHourly(data: List<HourlyWeatherEntity?  >) {
-        val diffResult = DiffUtil.calculateDiff(HourlyDiffCallback(hourlyWeather, data))
+        val diffsdsjdsjdhsjd
+        sdsjdhsjdhsjdsh
+        sjdsjdhsjdsjds
+        hsjdsjdhsjdsjResult = DiffUtil.calculateDiff(HourlyDiffCallback(hourlyWeather, data))
         hourlyWeather.clear()
         hourlyWeather.addAll(data)
         diffResult.dispatchUpdatesTo(this)

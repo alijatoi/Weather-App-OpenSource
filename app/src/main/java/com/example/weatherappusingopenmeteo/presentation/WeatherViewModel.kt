@@ -15,10 +15,14 @@ import javax.inject.Inject
 @HiltViewModel
 class WeatherViewModel @Inject constructor(private val weatherRepository : Repository):ViewModel() {
 
-
+dfksdkfjdskfjdskfjfkdsfjdsk
     private val _loadingState = MutableLiveData<WeatherLoadingState>()
     val loadingState: LiveData<WeatherLoadingState> = _loadingState
-
+zdfksdhfjkdshfjkdsf
+sfsjdfhsdjfhdsjfsdfksdfhdsjkf
+sfksjfsdkfjsdkfjsdkfjsdfksd
+sdkfhsdjfsdfhsdfjsdfjds
+sdfkhfdfhdjfdjf
     val currentWeather: LiveData<CurrentWeatherEntity?>
         get() = weatherRepository.currentWeather.asLiveData()
     val hourlyWeather: LiveData<List<HourlyWeatherEntity?>>
@@ -27,6 +31,7 @@ class WeatherViewModel @Inject constructor(private val weatherRepository : Repos
         get() = weatherRepository.dailyWeather.asLiveData()
     val cityWeather : LiveData<CurrentWeatherEntity>
     get() = weatherRepository.cityWeather
+    نرنرکنارکنارکنار
 
     val cityName: LiveData<String>
         get() = weatherRepository.cityName.asLiveData()
