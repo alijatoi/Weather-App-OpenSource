@@ -18,7 +18,11 @@ class WeatherViewModel @Inject constructor(private val weatherRepository : Repos
 dfksdkfjdskfjdskfjfkdsfjdsk
     private val _loadingState = MutableLiveData<WeatherLoadingState>()
     val loadingState: LiveData<WeatherLoadingState> = _loadingState
-
+zdfksdhfjkdshfjkdsf
+sfsjdfhsdjfhdsjfsdfksdfhdsjkf
+sfksjfsdkfjsdkfjsdkfjsdfksd
+sdkfhsdjfsdfhsdfjsdfjds
+sdfkhfdfhdjfdjf
     val currentWeather: LiveData<CurrentWeatherEntity?>
         get() = weatherRepository.currentWeather.asLiveData()
     val hourlyWeather: LiveData<List<HourlyWeatherEntity?>>
