@@ -23,6 +23,9 @@ sfsjdfhsdjfhdsjfsdfksdfhdsjkf
 sfksjfsdkfjsdkfjsdkfjsdfksd
 sdkfhsdjfsdfhsdfjsdfjds
 sdfkhfdfhdjfdjf
+sfksjfsdkfjsdkfjsdkfjsdfksddsdsds
+sdkfhsdjfsdfhsdfjsdfjdssdsdsd
+sdsds
     val currentWeather: LiveData<CurrentWeatherEntity?>
         get() = weatherRepository.currentWeather.asLiveData()
     val hourlyWeather: LiveData<List<HourlyWeatherEntity?>>
