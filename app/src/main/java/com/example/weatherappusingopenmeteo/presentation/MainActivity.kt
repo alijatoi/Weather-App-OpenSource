@@ -8,7 +8,10 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.weatherappusingopenmeteo.R
 
 import com.example.weatherappusingopenmeteo.databinding.ActivityMainBinding
-
+fffffffffffff
+ggggggggggg
+hhhhhhhhhh
+jjjjjjjjjjj
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 

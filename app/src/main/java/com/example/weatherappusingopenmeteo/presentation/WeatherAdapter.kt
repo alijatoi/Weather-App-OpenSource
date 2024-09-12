@@ -9,7 +9,17 @@ import com.example.weatherappusingopenmeteo.domain.model.DailyWeatherEntity
 import com.example.weatherappusingopenmeteo.domain.model.HourlyWeatherEntity
 import com.example.weatherappusingopenmeteo.presentation.viewholders.DailyViewHolder
 import com.example.weatherappusingopenmeteo.presentation.viewholders.HourlyViewHolder
+<<<<<<< Updated upstream
 import javax.inject.Inject
+=======
+import javax.inject.Injectdsdsd
+sdsjdhsjdhsjdshsdsdddsdsdss
+ffff
+gggg
+hhhh
+
+sdsjdhsjdhsjdshsdsdddsdsdss
+>>>>>>> Stashed changes
 
 class  WeatherAdapter @Inject constructor() : RecyclerView.Adapter<ViewHolder>() {
 
