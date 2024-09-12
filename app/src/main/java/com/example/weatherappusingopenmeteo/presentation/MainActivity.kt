@@ -10,6 +10,7 @@ import com.example.weatherappusingopenmeteo.R
 import com.example.weatherappusingopenmeteo.databinding.ActivityMainBinding
 fffffffffffff
 ggggggggggg
+sss
 hhhhhhhhhh
 jjjjjjjjjjj
 import com.google.android.material.bottomnavigation.BottomNavigationView
